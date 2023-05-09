@@ -4,7 +4,7 @@
   "main": "script.js",
   "scripts": {
     "start": "vite",
-    "dev": "vite --open",
+    "vite": "vite --open",
     "test": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "cy": "cypress run",
