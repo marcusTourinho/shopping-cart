@@ -46,6 +46,12 @@ export const getIdFromProduct = (product) => (
  * @param {string} id - ID do produto a ser removido do carrinho.
  */
 const removeCartProduct = (li, id) => {
+  const totalPriceS = document.querySelector('.total-price');
+  let totalPrice = parseFloat(totalPriceS.innerHTML);
+  const value = li.firstChild.nextSibling.lastChild.lastChild.innerHTML;
+  const valueToNum = parseFloat(value);
+  totalPrice -= valueToNum;
+  totalPriceS.innerHTML = totalPrice.toFixed(2);
   li.remove();
   removeCartID(id);
 };

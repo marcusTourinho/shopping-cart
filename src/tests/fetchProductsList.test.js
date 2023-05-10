@@ -9,17 +9,17 @@ describe('Teste a função fetchProductsList', () => {
   });
 
   it('fetch é chamado ao executar fetchProductsList', async () => {
-    await fetchProductsList('computer');
+    await fetchProductsList('computador');
     expect(fetch).toHaveBeenCalled();
   });
 
   it('fetch é chamado com o endpoint correto ao executar fetchProductsList', async () => {
-    await fetchProductsList('computer');
+    await fetchProductsList('computador');
     expect(fetch).toHaveBeenCalledWith('https://api.mercadolibre.com/sites/MLB/search?q=computador');
   });
 
   it('retorna uma estrutura de dados igual ao objeto computadorSearch ao executar fetchProductsList', async () => {
-    const data = await fetchProductsList('computer');
+    const data = await fetchProductsList('computador');
     await expect(data).toEqual(computadorSearch);
   });
 
